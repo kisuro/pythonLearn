@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 class TestAddGroup(unittest.TestCase):
     def setUp(self):
-        self.wd = webdriver.Firefox()
+        self.wd = webdriver.Firefox(executable_path='C:/ffdriver/geckodriver.exe')
         self.wd.implicitly_wait(30)
 
     def test_add_group(self):
