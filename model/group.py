@@ -1,3 +1,5 @@
+# object for groups
+
 class Group:
 
     def __init__(self, name, header, footer):

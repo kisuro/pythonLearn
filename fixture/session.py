@@ -1,8 +1,8 @@
-
+# base methods: login/logout
 
 class SessionHelper:
     def __init__(self, app):
-        self.app=app
+        self.app = app
 
     def login(self, username, pwd):
         wd = self.app.wd
