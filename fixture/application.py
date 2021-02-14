@@ -1,4 +1,4 @@
-# main fixture class with init/close driver etc
+# main fixture class (init driver/helpers)
 
 from selenium import webdriver
 from fixture.session import SessionHelper
