@@ -1,7 +1,5 @@
 # methods for contacts
 
-from selenium.webdriver.support.select import Select
-
 
 class ContactHelper:
     def __init__(self, app):
@@ -9,7 +7,8 @@ class ContactHelper:
 
     def open_new_contact_form(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("add new").click()
+        if not (wd.current_url.endswith("/edit.php")):
+            wd.find_element_by_link_text("add new").click()
 
     def create(self, contact):
         wd = self.app.wd
@@ -22,8 +21,6 @@ class ContactHelper:
         self.return_to_home_page()
 
     def fill_contact_data(self, contact):
-        wd = self.app.wd
-
         self.app.change_field_value("firstname", contact.firstname)
         self.app.change_field_value("middlename", contact.middlename)
         self.app.change_field_value("lastname", contact.lastname)
@@ -65,7 +62,8 @@ class ContactHelper:
 
     def return_to_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home page").click()
+        if not (wd.current_url.endswith("/index.php")):
+            wd.find_element_by_link_text("home page").click()
 
     def amount(self):
         wd = self.app.wd
