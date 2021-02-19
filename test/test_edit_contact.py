@@ -11,3 +11,10 @@ def test_edit_first_contact(app):
                     bmonth="June", byear="1982", aday="3", amonth="April", ayear="1990",
                     address2="AddressSecondary", phone2="7555555", notes="DrinkMeEdit"))
     app.session.logout()
+
+
+def test_edit_first_contact_middlename(app):
+    app.session.login(username="admin", pwd="secret")
+    app.contact.edit_first_contact(
+        ContactInfo(middlename="UpdateMiddleOnly"))
+    app.session.logout()
