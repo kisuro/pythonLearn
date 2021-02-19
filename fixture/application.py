@@ -22,6 +22,13 @@ class Application:
         # close driver
         self.wd.quit()
 
+    def is_valid(self):
+        try:
+            self.wd.current_url
+            return True
+        except:
+            return False
+
     # navigation method(s)
     def open_home_page(self):
         wd = self.wd
