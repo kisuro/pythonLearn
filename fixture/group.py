@@ -48,3 +48,16 @@ class GroupHelper:
     def return_to_groups_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("group page").click()
+
+    def amount(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        # define form
+        group_form = wd.find_element_by_xpath("//div[@id='content']//form")
+        # get amount of group form elements
+        amount_elements_in_form = len(group_form.find_elements_by_xpath(".//*"))
+        # amount of elements for empty form is 8
+        # each new record that +3el : 11 /14 /etc
+        return int((amount_elements_in_form-8)/3)
+
+
