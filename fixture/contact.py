@@ -62,9 +62,15 @@ class ContactHelper:
 
     def return_to_home_page(self):
         wd = self.app.wd
-        if not (wd.current_url.endswith("/index.php")):
+        if not (wd.current_url.endswith("/index.php") or (wd.current_url.endswith("addressbook/"))):
             wd.find_element_by_link_text("home page").click()
+
+    def open_home_page(self):
+        wd = self.app.wd
+        if not (wd.current_url.endswith("/index.php") or (wd.current_url.endswith("addressbook/"))):
+            wd.find_element_by_link_xpath("//a[text()='home']").click()
 
     def amount(self):
         wd = self.app.wd
+        self.open_home_page()
         return len(wd.find_elements_by_xpath("//table[@id='maintable']/tbody/tr")) - 1
