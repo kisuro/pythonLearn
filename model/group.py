@@ -1,4 +1,6 @@
 # object for groups
+from sys import maxsize
+
 
 class Group:
 
@@ -13,5 +15,13 @@ class Group:
         return "%s:%s" % (self.id, self.name)
 
     # redefine equal function - because python by default сompare by physic place in memory (not real value)
+    # also added workaround for 'None' id: self.id is None or other.id is None
     def __eq__(self, other):
-        return self.id == other.id and self.name == other.name
+        return (self.id is None or other.id is None or self.id == other.id) and self.name == other.name
+
+    # prepare workaround for 'None' id: if id=None assign big value - that moved to end of list when will be sorted
+    def id_or_max(self):
+        if self.id:
+            return int(self.id)
+        else:
+            return maxsize

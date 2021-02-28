@@ -1,4 +1,5 @@
 # methods for groups
+
 from model.group import Group
 
 
@@ -77,3 +78,5 @@ class GroupHelper:
             id = element.find_element_by_name("selected[]").get_attribute("value")
             group.append(Group(name=text, id=id))
         return group
+
+
