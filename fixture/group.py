@@ -1,4 +1,6 @@
 # methods for groups
+from model.group import Group
+
 
 class GroupHelper:
     def __init__(self, app):
@@ -65,3 +67,13 @@ class GroupHelper:
         # amount of elements for empty form is 8
         # each new record that +3el : 11 /14 /etc
         return int((amount_elements_in_form - 8) / 3)
+
+    def get_group_list(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        group = []
+        for element in wd.find_elements_by_css_selector("span.group"):
+            text = element.text
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            group.append(Group(name=text, id=id))
+        return group
