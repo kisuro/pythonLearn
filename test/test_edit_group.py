@@ -12,8 +12,8 @@ def test_edit_first_group(app):
     # for modified group (first in our case) also save id because it's doesn't changed after modify
     group.id = groups_before[0].id
     app.group.edit_first_group(group)
+    assert len(groups_before) == app.group.amount()
     groups_after = app.group.get_group_list()
-    assert len(groups_before) == len(groups_after)
     # second check: by content
     # replace first group , using new group data
     groups_before[0] = group
