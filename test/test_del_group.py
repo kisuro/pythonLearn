@@ -3,7 +3,7 @@ from random import randrange
 from model.group import Group
 
 
-def test_delete_first_group(app):
+def test_delete_group_by_index(app):
     if app.group.amount() == 0:
         app.group.create(
             Group(name="testGroupPrecondition", header="groupHeaderPrecondition", footer="groupFooterPrecondition"))

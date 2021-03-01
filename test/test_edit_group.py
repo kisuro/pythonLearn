@@ -3,7 +3,7 @@ from random import randrange
 from model.group import Group
 
 
-def test_edit_first_group(app):
+def test_edit_group_by_index(app):
     # precondition: create group if we have no groups
     if app.group.amount() == 0:
         app.group.create(
