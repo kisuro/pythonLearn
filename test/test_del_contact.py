@@ -13,6 +13,7 @@ def test_del_first_contact(app):
 
     contacts_before = app.contact.get_contact_list()
     app.contact.delete_first_contact()
+    assert len(contacts_before) - 1 == app.contact.amount()
     contacts_after = app.contact.get_contact_list()
     contacts_before[0:1] = []
     assert contacts_before == contacts_after

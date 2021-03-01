@@ -19,6 +19,7 @@ def test_edit_first_contact(app):
                           address2="AddressSecondary", phone2="7555555", notes="DrinkMeEdit")
     contact.id = contacts_before[0].id
     app.contact.edit_first_contact(contact)
+    assert len(contacts_before) == app.contact.amount()
     contacts_after = app.contact.get_contact_list()
     contacts_before[0] = contact
     assert sorted(contacts_before, key=ContactInfo.id_or_max) == sorted(contacts_after, key=ContactInfo.id_or_max)
