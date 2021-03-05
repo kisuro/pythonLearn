@@ -1,9 +1,6 @@
 # methods for contacts
 import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import re
 
 from model.contact import ContactInfo
 
@@ -73,10 +70,23 @@ class ContactHelper:
         self.open_home_page()
         self.contact_cache = None
 
+    def open_contact_to_edit_by_index(self, index):
+        wd = self.app.wd
+        # define record line
+        self.open_home_page()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+
+    def open_contact_view_by_index(self, index):
+        wd = self.app.wd
+        # define record line
+        self.open_home_page()
+        wd.find_elements_by_xpath("//img[@alt='Details']")[index].click()
+
     def edit_contact_by_index(self, index, contact):
         wd = self.app.wd
         # define record line
-        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+        # wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+        self.open_contact_to_edit_by_index(index)
         self.fill_contact_data(contact)
         wd.find_element_by_name("update").click()
         # return
@@ -103,9 +113,42 @@ class ContactHelper:
             wd = self.app.wd
             self.open_home_page()
             self.contact_cache = []
-            for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
-                name = element.find_element_by_xpath(".//td[3]").text
-                lname = element.find_element_by_xpath(".//td[2]").text
+            for element in wd.find_elements_by_name("entry"):
+                cells = element.find_elements_by_tag_name("td")
+                name = cells[2].text
+                lname = cells[1].text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                self.contact_cache.append(ContactInfo(firstname=name, lastname=lname, id=id))
+                all_phones = cells[5].text.splitlines()
+
+                # here: we need additional check if we have some empty phones
+
+                self.contact_cache.append(ContactInfo(firstname=name, lastname=lname, id=id, home=all_phones[0],
+                                                      mobile=all_phones[1], work=all_phones[2], phone2=all_phones[3]))
             return list(self.contact_cache)
+
+    def get_contact_info_from_edit_page(self, index):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_index(index)
+        homephone = wd.find_element_by_name("home").get_attribute("value")
+        workphone = wd.find_element_by_name("work").get_attribute("value")
+        mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
+        secondaryphone = wd.find_element_by_name("phone2").get_attribute("value")
+        firstname = wd.find_element_by_name("firstname").get_attribute("value")
+        lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        id = wd.find_element_by_name("id").get_attribute("value")
+        return ContactInfo(home=homephone, work=workphone,
+                           mobile=mobilephone, phone2=secondaryphone,
+                           firstname=firstname, lastname=lastname,
+                           id=id)
+
+    def get_contact_info_from_view_page (self, index):
+        wd = self.app.wd
+        self.open_contact_view_by_index(index)
+        text = wd.find_element_by_id("content").text
+        homephone = re.search("H: (.*)", text).group(1)
+        workphone = re.search("W: (.*)", text).group(1)
+        mobilephone = re.search("M: (.*)", text).group(1)
+        secondaryphone = re.search("P: (.*)", text).group(1)
+        return ContactInfo(home=homephone, work=workphone,
+                           mobile=mobilephone, phone2=secondaryphone)
+
