@@ -119,10 +119,12 @@ class ContactHelper:
                 lname = cells[1].text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
                 all_phones = cells[5].text
-
+                all_emails = cells[4].text
                 # here: we need additional check if we have some empty phones
 
-                self.contact_cache.append(ContactInfo(firstname=name, lastname=lname, id=id, all_phones_from_home_page=all_phones))
+                self.contact_cache.append(ContactInfo(firstname=name, lastname=lname, id=id,
+                                                      all_phones_from_home_page=all_phones,
+                                                      all_emails_from_home_page=all_emails))
             return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
@@ -135,12 +137,15 @@ class ContactHelper:
         firstname = wd.find_element_by_name("firstname").get_attribute("value")
         lastname = wd.find_element_by_name("lastname").get_attribute("value")
         id = wd.find_element_by_name("id").get_attribute("value")
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         return ContactInfo(home=homephone, work=workphone,
                            mobile=mobilephone, phone2=secondaryphone,
                            firstname=firstname, lastname=lastname,
-                           id=id)
+                           id=id, email=email, email2=email2, email3=email3)
 
-    def get_contact_info_from_view_page (self, index):
+    def get_contact_info_from_view_page(self, index):
         wd = self.app.wd
         self.open_contact_view_by_index(index)
         text = wd.find_element_by_id("content").text
@@ -150,4 +155,3 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return ContactInfo(home=homephone, work=workphone,
                            mobile=mobilephone, phone2=secondaryphone)
-
