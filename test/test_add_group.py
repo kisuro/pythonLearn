@@ -3,28 +3,29 @@ from model.group import Group
 import pytest
 import random
 import string
+import re
 
 
-# workaround: added replace - BUG in testsystem for all fields
+# bugs workaround: added re.sub
+# symbol: "'" - system bug from lesson (record doesn't created)
+# symbol: '\'  on group-contact page not displayed (also some ASCII Control character after them e.g: \t, \n)
+# double space -> on group-contact page one of them is not displayed
+# space at the end of name -> function element.text read without space: webdriver bug?
+# symbol: '<'  cut all data after this symbol (for group just for name field)
 def random_string(prefix, maxlen):
     symbols = string.ascii_letters + string.digits + string.punctuation + " " * 10
-    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))]).replace("'", "")
+    clear_symbols = re.sub(r"[\'\\<]|\s{2}|\s$", "", symbols)
+    return prefix + "".join([random.choice(clear_symbols) for i in range(random.randrange(maxlen))])
 
 
-# workaround: added replace - BUG in testsystem for name field
-    # double space -> on group page one of them is not displayed
-    # space at the end of name -> function element.text read without space: selenium bug?
-    # symbol: '\'  on group page not displayed and cut symbol after them
-    # symbol: '<'  cut all data after this symbol
-
-testdata = [Group(name="", header="", footer="")] + [
-    Group(name=random_string("name", 10).replace(" ", "").replace("<", "").replace("\\", ""),
+group_testdata = [Group(name="", header="", footer="")] + [
+    Group(name=random_string("name", 10),
           header=random_string("header", 20), footer=random_string("footer", 20))
     for i in range(5)
 ]
 
 
-@pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
+@pytest.mark.parametrize("group", group_testdata, ids=[repr(x) for x in group_testdata])
 def test_add_group(app, group):
     groups_before = app.group.get_group_list()
     app.group.create(group)
