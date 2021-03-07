@@ -12,7 +12,7 @@ class Group:
 
     # redefine representation of results in console - because by default we see just memory address, not value
     def __repr__(self):
-        return "%s:%s" % (self.id, self.name)
+        return "%s:%s;%s;%s" % (self.id, self.name, self.header, self.footer)
 
     # redefine equal function - because python by default сompare by physic place in memory (not real value)
     # also added workaround for 'None' id: self.id is None or other.id is None
