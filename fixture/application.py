@@ -9,14 +9,25 @@ from fixture.contact import ContactHelper
 
 
 class Application:
-    def __init__(self):
+    def __init__(self, browser, base_url):
         # init driver
-        self.wd = webdriver.Firefox(executable_path='C:/ffdriver/geckodriver.exe')
+        if browser == "firefox":
+            self.wd = webdriver.Firefox(executable_path='C:/webdrivers/ffdriver/geckodriver.exe')
+        elif browser == "chrome":
+            self.wd = webdriver.Chrome(executable_path='C:/webdrivers/chromedriver/chromedriver.exe')
+        elif browser == "ie":
+            self.wd = webdriver.Ie(executable_path='C:/webdrivers/iedriver/IEDriverServer.exe')
+        elif browser == "edge":
+            self.wd = webdriver.Ie(executable_path='C:/webdrivers/edge/msedgedriver.exe')
+        else:
+            raise ValueError("Unrecognized browser %s", browser)
+
         # self.wd.implicitly_wait(20)
         # init our helpers
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
+        self.base_url = base_url
 
     def destroy(self):
         # close driver
@@ -32,7 +43,7 @@ class Application:
     # navigation method(s)
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost/addressbook/")
+        wd.get(self.base_url)
 
     def change_field_value(self, field_name, text):
         wd = self.wd
