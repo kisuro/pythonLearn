@@ -7,14 +7,18 @@ fixture = None
 @pytest.fixture
 def app(request):
     global fixture
+    browser = request.config.getoption("--browser")
+    base_url = request.config.getoption("--baseUrl")
+    apwd = request.config.getoption("--apwd")
     if fixture is None:
-        browser = request.config.getoption("--browser")
-        base_url = request.config.getoption("--baseUrl")
         fixture = Application(browser=browser, base_url=base_url)
     else:
         if not fixture.is_valid():
-            fixture = Application()
-    fixture.session.ensure_login(username="admin", pwd="secret")
+            fixture = Application(browser=browser, base_url=base_url)
+    if apwd == "undefined":
+        raise ValueError("Undefined admin pwd %s", apwd)
+    else:
+        fixture.session.ensure_login(username="admin", pwd=apwd)
     return fixture
 
 
@@ -31,3 +35,4 @@ def stop(request):
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
     parser.addoption("--baseUrl", action="store", default="http://localhost/addressbook/")
+    parser.addoption("--apwd", action="store", default="undefined")
