@@ -1,3 +1,4 @@
+import importlib
 import json
 import os.path
 import pytest
@@ -37,6 +38,7 @@ def stop(request):
     def fin():
         fixture.session.ensure_logout()
         fixture.destroy()
+
     request.addfinalizer(fin)
     return fixture
 
@@ -44,3 +46,18 @@ def stop(request):
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
     parser.addoption("--target", action="store", default="target.json")
+
+
+# HOOK(check https://docs.pytest.org/en/stable/parametrize.html): Implement your own parametrization scheme or
+# implement some dynamism for determining the parameters or scope of a fixture. We implement inserting of testdata to
+# test (e.g. test_add_group) - removing annotation pytest and change input parameter to 'data_groups' in test
+def pytest_generate_tests(metafunc):
+    for fixture in metafunc.fixturenames:
+        if fixture.startswith("data_"):
+            testdata = load_from_module(fixture[5:])
+            # what we put: from - fixture, what - testdata, presented in string - ids
+            metafunc.parametrize(fixture, testdata, ids=[str(x) for x in testdata])
+
+
+def load_from_module(module):
+    return importlib.import_module("data.%s" % module).testdata
