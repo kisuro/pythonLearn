@@ -4,6 +4,7 @@ import os.path
 import pytest
 from fixture.application import Application
 import jsonpickle
+import random
 
 # define default value for variables
 fixture = None
@@ -75,3 +76,12 @@ def load_from_json(file):
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/%s.json" % file)) as f:
         # read file and decode to python object (testdata)
         return jsonpickle.decode(f.read())
+
+
+# my personal method for trv to get just 1 object from json (e.g. we can use it when we need just one testdata object
+# - test_edit_group.py, etc)
+def random_json_testdata(file):
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/%s.json" % file)) as f:
+        a = jsonpickle.decode(f.read())
+        index = random.randrange(len(a))
+        return a[int(index)]
