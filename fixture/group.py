@@ -80,6 +80,8 @@ class GroupHelper:
 
     group_cache = None
 
+    # метод для получения списка групп с UI (альтернатива получение данных списка прямо из БД: fixture/db.py -
+    # get_group_list)
     def get_group_list(self):
         if self.group_cache is None:
             wd = self.app.wd

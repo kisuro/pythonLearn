@@ -5,34 +5,62 @@ import pytest
 from fixture.application import Application
 import jsonpickle
 import random
+from fixture.db import DbFixture
 
 # define default value for variables
+
 fixture = None
 target = None
+
+
+# будет определять какой блок данных мы берем из target.json (web/db)
+def load_config(file):
+    global target
+    # check if data from target.json not loaded - load it
+    if target is None:
+        # find path to file and join with filename (from option "target")
+        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
+        # open file only while load, then autoClose
+        with open(config_file) as f:
+            target = json.load(f)
+    return target
 
 
 @pytest.fixture
 def app(request):
     # define variables as global
     global fixture
-    global target
     # get browser data as option (defined in run configuration "additional parameters", eg:--browser=chrome.
     # default=firefox)
     browser = request.config.getoption("--browser")
-    # check if data from target.json not loaded - load it
-    if target is None:
-        # find path to file and join with filename (from option "target")
-        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--target"))
-        # open file only while load, then autoClose
-        with open(config_file) as f:
-            target = json.load(f)
+    # указываем что берем из target.json данные web блока
+    web_config = load_config(request.config.getoption("--target"))['web']
     # check if fixture not loaded - load it
     if fixture is None or not fixture.is_valid():
-        # load base url from target.json
-        fixture = Application(browser=browser, base_url=target['baseUrl'])
-    # load user/password from target.json
-    fixture.session.ensure_login(username=target['user'], pwd=target['password'])
+        # load base url from target.json(web block)
+        fixture = Application(browser=browser, base_url=web_config['baseUrl'])
+    # load user/password from target.json(web block)
+    fixture.session.ensure_login(username=web_config['user'], pwd=web_config['password'])
     return fixture
+
+
+# метод для инициализации фикстуры db
+@pytest.fixture(scope="session")
+def db(request):
+    # указываем что берем из target.json данные db блока
+    db_config = load_config(request.config.getoption("--target"))['db']
+    # класс в пакете fixture/db.py и передаем ему данные из target.json(db block) для коннекта в базе
+    dbfixture = DbFixture(host=db_config['host'], name=db_config['name'], user=db_config['user'],
+                          password=db_config['password'])
+
+    # объявляем финализатор
+    def fin():
+        dbfixture.destroy()
+
+    # регистрируем
+    request.addfinalizer(fin)
+    # возвращаем
+    return dbfixture
 
 
 @pytest.fixture(scope="session", autouse=True)
