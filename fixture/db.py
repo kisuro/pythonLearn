@@ -11,8 +11,8 @@ class DbFixture:
         self.name = name
         self.user = user
         self.password = password
-        # делаем коннект к бд
-        self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
+        # делаем коннект к бд (autocommit=True сбрасываем кеш после каждого запроса)
+        self.connection = pymysql.connect(host=host, database=name, user=user, password=password, autocommit=True)
 
     # метод для получения списка групп из бд (вместо считывания данных вебдрайвером с ui: fixture/group.py -
     # get_group_list)
