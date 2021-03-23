@@ -73,9 +73,17 @@ def stop(request):
     return fixture
 
 
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption("--check_ui")
+
+
+# run configuration - additional arguments
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
     parser.addoption("--target", action="store", default="target.json")
+    # store_true - авто true если опция есть, false если ее нет
+    parser.addoption("--check_ui", action="store_true")
 
 
 # HOOK(check https://docs.pytest.org/en/stable/parametrize.html): Implement your own parametrization scheme or

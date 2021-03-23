@@ -18,7 +18,7 @@ from model.group import Group
 #     assert groups_before == groups_after
 
 # тест переделан для работы с БД, а также удаление не по индексу а по id
-def test_delete_group_by_index(app, db):
+def test_delete_group_by_index(app, db, check_ui):
     if len(db.get_group_list()) == 0:
         app.group.create(
             Group(name="testGroupPrecondition", header="groupHeaderPrecondition", footer="groupFooterPrecondition"))
@@ -33,3 +33,5 @@ def test_delete_group_by_index(app, db):
     groups_before.remove(group)
     # check that list of groups after equal(redefined in Group object class) groups before without first group
     assert groups_before == groups_after
+    if check_ui:
+        assert sorted(groups_after, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
