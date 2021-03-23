@@ -70,11 +70,29 @@ class ContactHelper:
         self.open_home_page()
         self.contact_cache = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        time.sleep(1)
+        self.open_home_page()
+        self.contact_cache = None
+
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd
         # define record line
         self.open_home_page()
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        wd.find_element_by_xpath("//img[@title='Edit']//parent::a[contains(@href,'id="+id+"')]").click()
 
     def open_contact_view_by_index(self, index):
         wd = self.app.wd
@@ -90,6 +108,16 @@ class ContactHelper:
         self.fill_contact_data(contact)
         wd.find_element_by_name("update").click()
         # return
+        self.open_home_page()
+        self.contact_cache = None
+
+    def edit_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        # self.select_contact_by_id(id)
+        # wd.find_element_by_name("edit").click()
+        self.open_contact_to_edit_by_id(id)
+        self.fill_contact_data(new_contact_data)
+        wd.find_element_by_name("update").click()
         self.open_home_page()
         self.contact_cache = None
 
@@ -155,3 +183,11 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return ContactInfo(home=homephone, work=workphone,
                            mobile=mobilephone, phone2=secondaryphone)
+
+    @staticmethod
+    def get_contact_by_id_from_clist(contacts_list, c_id):
+        cont = None
+        for contact in contacts_list:
+            if contact.id == c_id:
+                cont = contact
+        return cont

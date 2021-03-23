@@ -24,7 +24,7 @@ from model.group import Group
 #     assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
 
 
-def test_edit_group_by_index(app, db, check_ui):
+def test_edit_group_by_id(app, db, check_ui):
     # precondition: create group if we have no groups
     if len(db.get_group_list()) == 0:
         app.group.create(

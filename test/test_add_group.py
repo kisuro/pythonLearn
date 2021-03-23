@@ -26,7 +26,6 @@ def test_add_group(app, db, json_groups, check_ui):
     groups_before = db.get_group_list()
     app.group.create(group)
     groups_after = db.get_group_list()
-    # second check: by content
     groups_before.append(group)
     assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
     if check_ui:
