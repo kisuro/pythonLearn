@@ -21,7 +21,7 @@ from model.group import Group
 #     groups_before.append(group)
 #     assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
 
-def test_add_group(app, db, json_groups):
+def test_add_group(app, db, json_groups, check_ui):
     group = json_groups
     groups_before = db.get_group_list()
     app.group.create(group)
@@ -29,3 +29,5 @@ def test_add_group(app, db, json_groups):
     # second check: by content
     groups_before.append(group)
     assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
+    if check_ui:
+        assert sorted(groups_after, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
