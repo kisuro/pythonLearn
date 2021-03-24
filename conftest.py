@@ -8,6 +8,7 @@ import random
 from fixture.db import DbFixture
 
 # define default value for variables
+from fixture.orm import ORMFixture
 
 fixture = None
 target = None
@@ -61,6 +62,19 @@ def db(request):
     request.addfinalizer(fin)
     # возвращаем
     return dbfixture
+
+
+# метод для инициализации фикстуры ormdb
+@pytest.fixture(scope="session")
+def ormdb(request):
+    # указываем что берем из target.json данные db блока
+    db_config = load_config(request.config.getoption("--target"))['db']
+    # класс в пакете fixture/db.py и передаем ему данные из target.json(db block) для коннекта в базе
+    ormfixture = ORMFixture(host=db_config['host'], name=db_config['name'], user=db_config['user'],
+                            password=db_config['password'])
+
+    # возвращаем
+    return ormfixture
 
 
 @pytest.fixture(scope="session", autouse=True)
