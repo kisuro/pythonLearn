@@ -39,7 +39,7 @@ class DbFixture:
         cursor = self.connection.cursor()
         try:
             cursor.execute("select id, firstname, lastname, home, mobile, work, email, email2, email3, phone2 from "
-                           "addressbook")
+                           "addressbook where deprecated='0000-00-00 00:00:00'")
             for row in cursor:
                 # создаем объект contacts и в него заносим необходимые данные из БД и заносим все полученные объекты в
                 # список
