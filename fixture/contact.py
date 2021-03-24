@@ -25,6 +25,33 @@ class ContactHelper:
         self.open_home_page()
         self.contact_cache = None
 
+    def add_to_group(self, contact, group):
+        wd = self.app.wd
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_name("to_group").click()
+        for we_group in wd.find_elements_by_xpath("//select[@name='to_group']//option"):
+            if we_group.get_attribute("value") == group.id:
+                we_group.click()
+        wd.find_element_by_name("add").click()
+        # return
+        self.open_home_page()
+
+        self.contact_cache = None
+
+    def remove_from_group(self, contact, group):
+        wd = self.app.wd
+        # выбрать группу из выпадающего списка
+        for we_in_group in wd.find_elements_by_xpath("//select[@name='group']//option"):
+            if we_in_group.get_attribute("value") == group.id:
+                wd.find_element_by_name("group").click()
+                we_in_group.click()
+                break
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_name("remove").click()
+        # return
+        self.open_home_page()
+        self.contact_cache = None
+
     def fill_contact_data(self, contact):
         self.app.change_field_value("firstname", contact.firstname)
         self.app.change_field_value("middlename", contact.middlename)
@@ -127,7 +154,8 @@ class ContactHelper:
     def open_home_page(self):
         wd = self.app.wd
         if not (len(wd.find_elements_by_xpath("//form[@name='MainForm']")) == 1):
-            wd.find_element_by_xpath("//a[text()='home']").click()
+            #wd.find_element_by_xpath("//a[text()='home']").click()
+            wd.find_element_by_xpath("//img[@title='Addressbook']").click()
 
     def amount(self):
         wd = self.app.wd
