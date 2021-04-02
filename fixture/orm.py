@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from pony.orm import *
 from model.contact import ContactInfo
@@ -7,7 +6,6 @@ from pymysql.converters import decoders
 
 
 class ORMFixture:
-
     db = Database()
 
     class ORMGroup(db.Entity):
@@ -24,6 +22,13 @@ class ORMFixture:
         id = PrimaryKey(int, column='id')
         firstname = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
+        email = Optional(str, column='email')
+        email2 = Optional(str, column='email2')
+        email3 = Optional(str, column='email3')
+        home = Optional(str, column='home')
+        mobile = Optional(str, column='mobile')
+        work = Optional(str, column='work')
+        phone2 = Optional(str, column='phone2')
         deprecated = Optional(str, column='deprecated')
         groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts",
                      lazy=True)
@@ -36,6 +41,7 @@ class ORMFixture:
     def convert_groups_to_model(self, groups):
         def convert(group):
             return Group(id=str(group.id), name=group.name, header=group.header, footer=group.footer)
+
         return list(map(convert, groups))
 
     @db_session
@@ -44,7 +50,10 @@ class ORMFixture:
 
     def convert_contacts_to_model(self, contacts):
         def convert(contact):
-            return ContactInfo(id=str(contact.id), firstname=contact.firstname, lastname=contact.lastname)
+            return ContactInfo(id=str(contact.id), firstname=contact.firstname, lastname=contact.lastname,
+                               email=contact.email, email2=contact.email2, email3=contact.email3, home=contact.home,
+                               mobile=contact.mobile, work=contact.work, phone2=contact.phone2)
+
         return list(map(convert, contacts))
 
     @db_session
@@ -61,7 +70,6 @@ class ORMFixture:
         orm_group = list(select(g for g in ORMFixture.ORMGroup if g.id == group.id))[0]
         return self.convert_contacts_to_model(
             select(c for c in ORMFixture.ORMContact if c.deprecated is None and orm_group not in c.groups))
-
 
     @db_session
     def get_groups_for_contact(self, contact):
