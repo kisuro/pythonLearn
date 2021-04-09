@@ -108,7 +108,6 @@ class ContactHelper:
 
     def select_contact_by_id(self, id):
         wd = self.app.wd
-        time.sleep(15)
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def open_contact_to_edit_by_index(self, index):
