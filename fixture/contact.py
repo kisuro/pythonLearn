@@ -108,6 +108,7 @@ class ContactHelper:
 
     def select_contact_by_id(self, id):
         wd = self.app.wd
+        self.open_home_page()
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def open_contact_to_edit_by_index(self, index):
@@ -156,6 +157,7 @@ class ContactHelper:
         if not (len(wd.find_elements_by_xpath("//form[@name='MainForm']")) == 1):
             #wd.find_element_by_xpath("//a[text()='home']").click()
             wd.find_element_by_xpath("//img[@title='Addressbook']").click()
+            time.sleep(1)
 
     def amount(self):
         wd = self.app.wd
@@ -201,6 +203,9 @@ class ContactHelper:
                            firstname=firstname, lastname=lastname,
                            id=id, email=email, email2=email2, email3=email3)
 
+
+
+
     def get_contact_info_from_view_page(self, index):
         wd = self.app.wd
         self.open_contact_view_by_index(index)
@@ -211,6 +216,8 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return ContactInfo(home=homephone, work=workphone,
                            mobile=mobilephone, phone2=secondaryphone)
+
+
 
     @staticmethod
     def get_contact_by_id_from_clist(contacts_list, c_id):

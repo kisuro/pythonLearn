@@ -58,6 +58,7 @@ class GroupHelper:
 
     def select_group_by_id(self, id_el):
         wd = self.app.wd
+        self.return_to_groups_page()
         wd.find_element_by_css_selector("input[value='%s']" % id_el).click()
 
     def edit_group_by_index(self, index, new_group_data):
@@ -91,6 +92,7 @@ class GroupHelper:
         wd = self.app.wd
         if not (self.is_group_page()):
             wd.find_element_by_link_text("group page").click()
+            time.sleep(1)
 
     def amount(self):
         wd = self.app.wd
