@@ -109,6 +109,7 @@ class ContactHelper:
     def select_contact_by_id(self, id):
         wd = self.app.wd
        # wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        time.sleep(2)
         checkbox = wd.find_element_by_xpath("//input[@value='"+id+"']")
         checkbox.click()
 
