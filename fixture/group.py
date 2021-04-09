@@ -56,12 +56,10 @@ class GroupHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
-    def select_group_by_id(self, id):
+    def select_group_by_id(self, id_el):
         wd = self.app.wd
-        # wd.find_element_by_css_selector("input[value='%s']" % id).click()
-        time.sleep(2)
-        checkbox = wd.find_element_by_xpath("//input[@value='" + id + "']")
-        checkbox.click()
+        time.sleep(15)
+        wd.find_element_by_css_selector("input[value='%s']" % id_el).click()
 
     def edit_group_by_index(self, index, new_group_data):
         wd = self.app.wd
