@@ -108,7 +108,9 @@ class ContactHelper:
 
     def select_contact_by_id(self, id):
         wd = self.app.wd
-        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+       # wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        checkbox = wd.find_element_by_xpath("//input[@value='"+id+"']")
+        checkbox.click()
 
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd
