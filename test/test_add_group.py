@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from model.group import Group
+import pytest
 
 
 # annotation removed and changed to method pytest_generate_tests in confest.py @pytest.mark.parametrize("group",
@@ -23,10 +24,13 @@ from model.group import Group
 
 def test_add_group(app, db, json_groups, check_ui):
     group = json_groups
-    groups_before = db.get_group_list()
-    app.group.create(group)
-    groups_after = db.get_group_list()
-    groups_before.append(group)
-    assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
+    with pytest.allure.step('Given a group list'):
+        groups_before = db.get_group_list()
+    with pytest.allure.step('When I add a group %s to the list' % group):
+        app.group.create(group)
+    with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+        groups_after = db.get_group_list()
+        groups_before.append(group)
+        assert sorted(groups_before, key=Group.id_or_max) == sorted(groups_after, key=Group.id_or_max)
     if check_ui:
         assert sorted(groups_after, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)

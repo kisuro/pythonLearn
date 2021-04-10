@@ -1,0 +1,845 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1618085593370" stop="1618085676045">
+  <name>test</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1618085593370" status="passed" stop="1618085602349">
+      <name>test_add_contact.test_add_contact[None:fname:lnamePwb]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085599590" status="passed" stop="1618085599638">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085599653" status="passed" stop="1618085602295">
+          <name>When I add a contact None:fname:lnamePwb to the list</name>
+          <title>When I add a contact None:fname:lnamePwb to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085602308" status="passed" stop="1618085602348">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085602375" status="passed" stop="1618085605092">
+      <name>test_add_contact.test_add_contact[None:fnameV!):lnameT,B]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085602414" status="passed" stop="1618085602447">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085602459" status="passed" stop="1618085605043">
+          <name>When I add a contact None:fnameV!):lnameT,B to the list</name>
+          <title>When I add a contact None:fnameV!):lnameT,B to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085605057" status="passed" stop="1618085605091">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085605119" status="passed" stop="1618085607933">
+      <name>test_add_contact.test_add_contact[None:fname:lname?^]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085605157" status="passed" stop="1618085605190">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085605202" status="passed" stop="1618085607887">
+          <name>When I add a contact None:fname:lname?^ to the list</name>
+          <title>When I add a contact None:fname:lname?^ to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085607900" status="passed" stop="1618085607933">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085607961" status="passed" stop="1618085610720">
+      <name>test_add_contact.test_add_contact[None:fnameS_:lnameLyy&amp;M}Yhf|tpTB]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085608002" status="passed" stop="1618085608034">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085608047" status="passed" stop="1618085610672">
+          <name>When I add a contact None:fnameS_:lnameLyy&amp;M}Yhf|tpTB to the list</name>
+          <title>When I add a contact None:fnameS_:lnameLyy&amp;M}Yhf|tpTB to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085610686" status="passed" stop="1618085610719">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085610747" status="passed" stop="1618085613491">
+      <name>test_add_contact.test_add_contact[None:fnameFWyDCj`r:lnameRw:V)fU]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085610788" status="passed" stop="1618085610821">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085610835" status="passed" stop="1618085613442">
+          <name>When I add a contact None:fnameFWyDCj`r:lnameRw:V)fU to the list</name>
+          <title>When I add a contact None:fnameFWyDCj`r:lnameRw:V)fU to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085613455" status="passed" stop="1618085613490">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085613518" status="passed" stop="1618085615867">
+      <name>test_add_group.test_add_group[None:;;]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085613558" status="passed" stop="1618085613592">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085613611" status="passed" stop="1618085615819">
+          <name>When I add a group None:;; to the list</name>
+          <title>When I add a group None:;; to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085615832" status="passed" stop="1618085615867">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085615894" status="passed" stop="1618085618135">
+      <name>test_add_group.test_add_group[None:nameX_D%h;headerS7;footern8{7*]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085615934" status="passed" stop="1618085615967">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085615979" status="passed" stop="1618085618089">
+          <name>When I add a group None:nameX_D%h;headerS7;footern8{7* to the list</name>
+          <title>When I add a group None:nameX_D%h;headerS7;footern8{7* to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085618101" status="passed" stop="1618085618135">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085618162" status="passed" stop="1618085620391">
+      <name>test_add_group.test_add_group[None:name/Jt2j;header;footerqq3O7in2.@zu:#;Q]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085618201" status="passed" stop="1618085618237">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085618255" status="passed" stop="1618085620344">
+          <name>When I add a group None:name/Jt2j;header;footerqq3O7in2.@zu:#;Q to the list</name>
+          <title>When I add a group None:name/Jt2j;header;footerqq3O7in2.@zu:#;Q to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085620357" status="passed" stop="1618085620390">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085620419" status="passed" stop="1618085622642">
+      <name>test_add_group.test_add_group[None:namef;headere8ovt}@c3;footerhI[N]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085620460" status="passed" stop="1618085620494">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085620506" status="passed" stop="1618085622595">
+          <name>When I add a group None:namef;headere8ovt}@c3;footerhI[N to the list</name>
+          <title>When I add a group None:namef;headere8ovt}@c3;footerhI[N to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085622608" status="passed" stop="1618085622642">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085622670" status="passed" stop="1618085624901">
+      <name>test_add_group.test_add_group[None:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085622709" status="passed" stop="1618085622742">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085622757" status="passed" stop="1618085624854">
+          <name>When I add a group None:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp to the list</name>
+          <title>When I add a group None:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085624867" status="passed" stop="1618085624900">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085624928" status="passed" stop="1618085627180">
+      <name>test_add_group.test_add_group[None:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085624968" status="passed" stop="1618085625004">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085625016" status="passed" stop="1618085627131">
+          <name>When I add a group None:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw to the list</name>
+          <title>When I add a group None:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085627144" status="passed" stop="1618085627180">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085627208" status="passed" stop="1618085630848">
+      <name>test_contact_info_on_main_page.test_contact_info_on_main_page</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085627252" status="passed" stop="1618085628901">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085628924" status="passed" stop="1618085630487">
+          <name>When I get a contact from the home page</name>
+          <title>When I get a contact from the home page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085630500" status="passed" stop="1618085630798">
+          <name>When I get a contact from the edit page</name>
+          <title>When I get a contact from the edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085630813" status="passed" stop="1618085630848">
+          <name>Then the contact info is equal on home and edit page</name>
+          <title>Then the contact info is equal on home and edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085630878" status="passed" stop="1618085631189">
+      <name>test_contact_info_on_main_page.test_contact_info_on_main_page_db</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085630955" status="passed" stop="1618085630994">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085631008" status="passed" stop="1618085631042">
+          <name>When I get a all contacts from the home page</name>
+          <title>When I get a all contacts from the home page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085631056" status="passed" stop="1618085631095">
+          <name>When I get all contacts db</name>
+          <title>When I get all contacts db</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085631109" status="passed" stop="1618085631141">
+          <name>Then the contacts lists size are equal</name>
+          <title>Then the contacts lists size are equal</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085631153" status="passed" stop="1618085631189">
+          <name>Then the contacts info is equal on home page and db</name>
+          <title>Then the contacts info is equal on home page and db</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085631220" status="passed" stop="1618085633327">
+      <name>test_contact_phones.test_phones_on_home_page</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085631275" status="passed" stop="1618085632921">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085632934" status="passed" stop="1618085632965">
+          <name>When I get a contacts list from the home page</name>
+          <title>When I get a contacts list from the home page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085632978" status="passed" stop="1618085633281">
+          <name>When I get a contacts list from the edit page</name>
+          <title>When I get a contacts list from the edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085633294" status="passed" stop="1618085633327">
+          <name>Then the contact phones is equal on home and edit page</name>
+          <title>Then the contact phones is equal on home and edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085633356" status="passed" stop="1618085637154">
+      <name>test_contact_phones.test_phones_on_details_page</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085633397" status="passed" stop="1618085635024">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085635037" status="passed" stop="1618085635210">
+          <name>When I get a contacts list from the details page</name>
+          <title>When I get a contacts list from the details page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085635225" status="passed" stop="1618085637106">
+          <name>When I get a contacts list from the edit page</name>
+          <title>When I get a contacts list from the edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085637121" status="passed" stop="1618085637154">
+          <name>Then the contact phones is equal on details and edit page</name>
+          <title>Then the contact phones is equal on details and edit page</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085637184" status="passed" stop="1618085644864">
+      <name>test_contacts_vs_group.test_del_contact_from_group</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085637229" status="passed" stop="1618085637272">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085637286" status="passed" stop="1618085637324">
+          <name>Precondition: check that at least 1 group exist or create</name>
+          <title>Precondition: check that at least 1 group exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085637338" status="passed" stop="1618085637376">
+          <name>Given a contact</name>
+          <title>Given a contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085637390" status="passed" stop="1618085641973">
+          <name>When check that contact in group OR add</name>
+          <title>When check that contact in group OR add</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085641986" status="passed" stop="1618085644814">
+          <name>When remove contact 248:fnameFWyDCj`r:lnameRw:V)fU from group 514:nameX_D%h;headerS7;footern8{7*</name>
+          <title>When remove contact 248:fnameFWyDCj`r:lnameRw:V)fU from group 514:nameX_D%h;headerS7;footern8{7*</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085644826" status="passed" stop="1618085644863">
+          <name>Then check that contact 248:fnameFWyDCj`r:lnameRw:V)fU removed from group 514:nameX_D%h;headerS7;footern8{7*</name>
+          <title>Then check that contact 248:fnameFWyDCj`r:lnameRw:V)fU removed from group 514:nameX_D%h;headerS7;footern8{7*</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085644891" status="passed" stop="1618085648228">
+      <name>test_contacts_vs_group.test_add_contact_to_group</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085644932" status="passed" stop="1618085644969">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085644981" status="passed" stop="1618085645018">
+          <name>Precondition: check that at least 1 group exist or create</name>
+          <title>Precondition: check that at least 1 group exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085645029" status="passed" stop="1618085645069">
+          <name>Given a contact</name>
+          <title>Given a contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085645081" status="passed" stop="1618085645120">
+          <name>When define group for contact</name>
+          <title>When define group for contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085645133" status="passed" stop="1618085648179">
+          <name>When add contact 234:fname:lnamePwb to group 554:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</name>
+          <title>When add contact 234:fname:lnamePwb to group 554:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085648193" status="passed" stop="1618085648227">
+          <name>Then check that contact 234:fname:lnamePwb added to group 554:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</name>
+          <title>Then check that contact 234:fname:lnamePwb added to group 554:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085648255" status="passed" stop="1618085649990">
+      <name>test_db_matches_ui.test_group_list</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085648316" status="passed" stop="1618085649899">
+          <name>Given a group list from UI</name>
+          <title>Given a group list from UI</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085649912" status="passed" stop="1618085649944">
+          <name>Given a group list from DB</name>
+          <title>Given a group list from DB</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085649957" status="passed" stop="1618085649990">
+          <name>Then check db/ui groups is equals</name>
+          <title>Then check db/ui groups is equals</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085650018" status="passed" stop="1618085654674">
+      <name>test_del_contact.test_del_contact_by_index</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085650055" status="passed" stop="1618085650089">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085650102" status="passed" stop="1618085650139">
+          <name>Given a contact list from DB</name>
+          <title>Given a contact list from DB</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085650152" status="passed" stop="1618085654615">
+          <name>When remove contact 194:fname:lnamePwb by ID</name>
+          <title>When remove contact 194:fname:lnamePwb by ID</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085654628" status="passed" stop="1618085654674">
+          <name>Then the contact 194:fname:lnamePwb was deleted</name>
+          <title>Then the contact 194:fname:lnamePwb was deleted</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085654703" status="passed" stop="1618085656558">
+      <name>test_del_group.test_delete_group_by_id</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085654743" status="passed" stop="1618085654777">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085654790" status="passed" stop="1618085654823">
+          <name>Given a group list from DB</name>
+          <title>Given a group list from DB</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085654836" status="passed" stop="1618085656476">
+          <name>When remove group 571:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp by ID</name>
+          <title>When remove group 571:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp by ID</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085656489" status="passed" stop="1618085656557">
+          <name>Then the group 571:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp was deleted</name>
+          <title>Then the group 571:name6..P;headercBrpa&amp;MJ5`rmZcJ;footer2/8Qp was deleted</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085656585" status="passed" stop="1618085667597">
+      <name>test_edit_contact.test_edit_contact_by_index</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085656627" status="passed" stop="1618085656661">
+          <name>Precondition: check that at least 1 contact exist or create</name>
+          <title>Precondition: check that at least 1 contact exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085656672" status="passed" stop="1618085656706">
+          <name>Given a contact list from DB</name>
+          <title>Given a contact list from DB</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085656719" status="passed" stop="1618085656750">
+          <name>When prepare a contact data for edit</name>
+          <title>When prepare a contact data for edit</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085656763" status="passed" stop="1618085667504">
+          <name>When change contact data to: None:KirillEdit:SukhomlinEdit</name>
+          <title>When change contact data to: None:KirillEdit:SukhomlinEdit</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085667517" status="passed" stop="1618085667552">
+          <name>When get a contact from DB after change data</name>
+          <title>When get a contact from DB after change data</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085667565" status="passed" stop="1618085667596">
+          <name>Then compare that new contact list contain updated contact</name>
+          <title>Then compare that new contact list contain updated contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085667624" status="passed" stop="1618085670444">
+      <name>test_edit_group.test_edit_group_by_id</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085667665" status="passed" stop="1618085667700">
+          <name>Precondition: check that at least 1 group exist or create</name>
+          <title>Precondition: check that at least 1 group exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085667713" status="passed" stop="1618085667746">
+          <name>Given a group list from DB</name>
+          <title>Given a group list from DB</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085667759" status="passed" stop="1618085667790">
+          <name>When prepare a group data for edit</name>
+          <title>When prepare a group data for edit</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085667802" status="passed" stop="1618085670345">
+          <name>When change group data to: None:testGroupEdit;groupHeaderEdit;groupFooterEdit</name>
+          <title>When change group data to: None:testGroupEdit;groupHeaderEdit;groupFooterEdit</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085670358" status="passed" stop="1618085670399">
+          <name>When get a group from DB after change data</name>
+          <title>When get a group from DB after change data</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085670412" status="passed" stop="1618085670443">
+          <name>Then compare that new group list contain updated group</name>
+          <title>Then compare that new group list contain updated group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618085670471" status="passed" stop="1618085676045">
+      <name>test_edit_group.test_edit_group_by_index_loadtestdata</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9708-MainThread"/>
+        <label name="host" value="Minotik"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618085670513" status="passed" stop="1618085670578">
+          <name>Precondition: check that at least 1 group exist or create</name>
+          <title>Precondition: check that at least 1 group exist or create</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085670590" status="passed" stop="1618085672071">
+          <name>Given a group list from UI</name>
+          <title>Given a group list from UI</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085672083" status="passed" stop="1618085674461">
+          <name>When change group data to: 538:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</name>
+          <title>When change group data to: 538:name&amp;Usk+I;header&amp;cx8;footerzdBu}lWSyMBw</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085674473" status="passed" stop="1618085674551">
+          <name>Then compare amount of group still the same</name>
+          <title>Then compare amount of group still the same</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618085676015" status="passed" stop="1618085676045">
+          <name>Then compare that new group list contain updated group</name>
+          <title>Then compare that new group list contain updated group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

@@ -1,5 +1,8 @@
 from random import randrange
 import random
+
+import pytest
+
 from model.group import Group
 
 
@@ -19,19 +22,23 @@ from model.group import Group
 
 # тест переделан для работы с БД, а также удаление не по индексу а по id
 def test_delete_group_by_id(app, db, check_ui):
-    if len(db.get_group_list()) == 0:
-        app.group.create(
-            Group(name="testGroupPrecondition", header="groupHeaderPrecondition", footer="groupFooterPrecondition"))
-    groups_before = db.get_group_list()
+    with pytest.allure.step('Precondition: check that at least 1 contact exist or create'):
+        if len(db.get_group_list()) == 0:
+            app.group.create(
+                Group(name="testGroupPrecondition", header="groupHeaderPrecondition", footer="groupFooterPrecondition"))
+    with pytest.allure.step('Given a group list from DB'):
+        groups_before = db.get_group_list()
     # определяем случайную группу
     group = random.choice(groups_before)
     # удаляем группу по id
-    app.group.delete_group_by_id(group.id)
-    assert len(groups_before) - 1 == app.group.amount()
-    groups_after = db.get_group_list()
-    # из списка убдет удален элемент который равен заданному, поскольку сравнение по идентификатору (уникальны)
-    groups_before.remove(group)
-    # check that list of groups after equal(redefined in Group object class) groups before without first group
-    assert groups_before == groups_after
+    with pytest.allure.step('When remove group %s by ID' % group):
+        app.group.delete_group_by_id(group.id)
+    with pytest.allure.step('Then the group %s was deleted' % group):
+        assert len(groups_before) - 1 == app.group.amount()
+        groups_after = db.get_group_list()
+        # из списка убдет удален элемент который равен заданному, поскольку сравнение по идентификатору (уникальны)
+        groups_before.remove(group)
+        # check that list of groups after equal(redefined in Group object class) groups before without first group
+        assert groups_before == groups_after
     if check_ui:
         assert sorted(groups_after, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
